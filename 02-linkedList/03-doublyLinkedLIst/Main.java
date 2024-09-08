@@ -1,4 +1,3 @@
-package net.abdurrahman.app;
 
 public class Main {
 
@@ -81,6 +80,53 @@ public class Main {
         displayDoublyLinkedList(ddList, "before removeNodeAtIndex Method");
         ddList.removeNodeAtIndex(9);
         displayDoublyLinkedList(ddList, "after removeNodeAtIndex Method");
+
+
+        displayDoublyLinkedList(ddList, "before reverse Method");
+        ddList.reverse();
+        displayDoublyLinkedList(ddList, "after reverse Method");
+
+        displayDoublyLinkedList(ddList, "before emptyDoublyLinkedList Method");
+        ddList.emptyDoublyLinkedList();
+        displayDoublyLinkedList(ddList, "after emptyDoublyLinkedList Method");
+
+        ddList.appendNode(9);
+        displayDoublyLinkedList(ddList, "after appendNode");
+
+        displayDoublyLinkedList(ddList, "before reverse Method");
+        ddList.reverse();
+        displayDoublyLinkedList(ddList, "after reverse Method");
+        ddList.emptyDoublyLinkedList();
+        ddList.reverse();
+        displayDoublyLinkedList(ddList, "after emptyDoublyLinkedList Method");
+        ddList.appendNode(13);
+        displayDoublyLinkedList(ddList, "after appendNode");
+        ddList.appendNode(31);
+        displayDoublyLinkedList(ddList, "after appendNode");
+        ddList.reverse();
+        displayDoublyLinkedList(ddList, "after reverse Method");
+        ddList.emptyDoublyLinkedList();
+        displayDoublyLinkedList(ddList, "after emptyDoublyLinkedList Method");
+        ddList.appendNode(17);
+        ddList.appendNode(37);
+        ddList.appendNode(71);
+        ddList.appendNode(73);
+        ddList.appendNode(79);
+        ddList.appendNode(97);
+        displayDoublyLinkedList(ddList, "after appendNodes");
+        ddList.reverseTwo();
+        displayDoublyLinkedList(ddList, "after reverseTwo");
+
+        ddList.printDoublyLinkedLIst();
+        ddList.emptyDoublyLinkedList();
+        ddList.printDoublyLinkedLIst();
+        ddList.appendNode(37);
+        displayDoublyLinkedList(ddList, "after appendNodes");
+        ddList.printDoublyLinkedLIst();
+
+        ddList.appendNode(73);
+        displayDoublyLinkedList(ddList, "after appendNodes");
+        ddList.printDoublyLinkedLIst();
 
     }//end of main Method
 }//end of Main Class

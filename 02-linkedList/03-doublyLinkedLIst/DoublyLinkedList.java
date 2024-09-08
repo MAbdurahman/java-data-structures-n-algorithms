@@ -1,4 +1,3 @@
-package net.abdurrahman.app;
 
 public class DoublyLinkedList {
     //Instance variables
@@ -21,7 +20,7 @@ public class DoublyLinkedList {
 
     }//end of DoublyLinkedList Constructor with one parameter
 
-     protected class Node {
+    protected class Node {
         int value;
         Node next;
         Node prev;
@@ -75,6 +74,30 @@ public class DoublyLinkedList {
         System.out.println();
     }//end of displayList Method
 
+    public void printDoublyLinkedLIst() {
+        Node current = head;
+
+        if(head == null) {
+            System.out.println("DoublyLinkedList is empty");
+            return;
+        }
+        System.out.print("null <<-prev -");
+        while (current != null) {
+            if (current.value == tail.value) {
+                System.out.print(current.value + "- ");
+
+            } else {
+
+                System.out.printf("%d <- —> ", current.value);
+            }
+            current = current.next;
+
+        }
+
+        System.out.println("next->> null");
+
+    }//end of printDoublyLinkedLidt Method
+
     public void getHead() {
         System.out.println("Head: " + this.head.value);
     }//end of getHead Method
@@ -86,6 +109,13 @@ public class DoublyLinkedList {
     public void getLength() {
         System.out.println("Length: " + this.length);
     }
+
+    public void emptyDoublyLinkedList() {
+        head = null;
+        tail = null;
+        length = 0;
+
+    }//end of emptyDoublyLinkedList Method
 
     public int calculateListLength() {
         Node current = head;
@@ -247,4 +277,69 @@ public class DoublyLinkedList {
         return temp;
 
     }//end of removeNodeAtIndex Method
+
+    public void swapFirstLast() {
+        if (length < 2) {
+            return;
+        }
+        Node headTemp = head;
+        Node tailTemp = tail;
+
+        int tempValue = headTemp.value;
+        headTemp.value = tailTemp.value;
+        tailTemp.value = tempValue;
+
+    }//end of swapFirstLast Method
+
+    public void swapNextAndPrev(Node node) {
+        Node prev = node.prev;
+        node.prev = node.next;
+        node.next = prev;
+
+    }//end of swapNextAndPrev Method
+
+    public void reverse() {
+        if (length <= 1) {
+            return;
+        }
+
+        Node prev = null;
+        Node current = head;
+
+        //traverse the doublyLinkedList
+        while (current != null) {
+
+            //swap next and prev pointers for the current node
+            swapNextAndPrev(current);
+
+            //update the previous node before moving to the next node
+            prev = current;
+
+            //since next and prev pointers were swapped, move to the next node in
+            //the doubly linked list
+            current = current.prev;
+        }
+
+        //update head pointer to the last node
+        current = head;
+        head = prev;
+        tail = current;
+
+    }//end of reverse Method
+
+    public void reverseTwo() {
+        Node current = head;
+        Node temp = null;
+
+        while (current != null) {
+            temp = current.prev;
+            current.prev = current.next;
+            current.next = temp;
+            current = current.prev;
+        }
+
+        temp = head;
+        head = tail;
+        tail = temp;
+    }//end of reverseTwo Method
 }//end of DoublyLinkedList Class
